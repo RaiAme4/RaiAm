@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Pertanyaan</title>
+    <style>
+        /* Gaya CSS untuk tata letak halaman */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #F0DDD7; 
+        }
+        img {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+        }
+        .options button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px; /* Membuat sudut tombol menjadi melengkung */
+            border: none; /* Menghapus border */
+        }
+        /* Gaya tambahan untuk warna tombol */
+        .options button.yes {
+            background-color: #72E985;
+            color: white;
+        }
+        .options button.no {
+            background-color: #FF598D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img id="gambar" src="A.png" alt="Met Ultah!!">
+    <div class="question">Selamat ulang tahun!! Apa kau menerima ucapan ini?</div>
+    <div class="options">
+        <button class="yes" onclick="jawab('yes')">Yes</button>
+        <button class="no" onclick="jawab('no')">No</button>
+    </div>
+    <script>
+        var pertanyaan = [
+            {text: "Selamat ulang tahun!! Apa kau menerima ucapan ini?", image: "A.png"},
+            {text: "Eh? Kenapa? Apakah kau menerima?", image: "B.jpg"},
+            {text: "A!! Ayolah!! Jawab yes", image: "C.jpg"},
+            {text: "Kenapa terus terusan no?! Jawab yes", image: "D.jpg"},
+            {text: "Ayolah jangan ToT", image: "E.jpg"},
+            {text: "Berhenti menekan opsi no!", image: "F.jpg"},
+            {text: "Dil !!!", image: "G.jpg"},
+            {text: "Ayolah---", image: "H.jpg"},
+            {text: "Hei!! Tekan yes", image: "I.jpg"},
+            {text: "Apa coba..", image: "J.jpg"},
+            {text: "Jangan tekan no", image: "K.jpg"},
+            {text: "Isshhh jangan", image: "L.jpg"},
+            {text: "Woe!!", image: "M.jpg"},
+            {text: "Serius..?", image: "N.jpg"},
+            {text: "Pertanyaan terakhir.. Diterima gak?", image: "O.jpg"},
+            {text: "oh, padahal udah ku siapin berbulan-bulan.", image: "P.jpg"}
+        ];
+        var indexPertanyaan = 0;
+
+        function jawab(jawaban) {
+            if (jawaban === 'yes') {
+                document.getElementById('gambar').src = 'Z.jpg';
+                document.querySelector('.question').style.display = 'none';
+                document.querySelector('.options').style.display = 'none';
+                return; // Menghentikan eksekusi fungsi setelah ini
+            } else {
+                if (indexPertanyaan === 14) {
+                    window.location.href = 'https://youtu.be/HfXoMyo3nk8?si=Sp8lx2sbYFjww4yK';
+                } else {
+                    indexPertanyaan++;
+                }
+            }
+            document.getElementById('gambar').src = pertanyaan[indexPertanyaan].image;
+            document.querySelector('.question').textContent = pertanyaan[indexPertanyaan].text;
+        }
+    </script>
+</body>
+</html>
